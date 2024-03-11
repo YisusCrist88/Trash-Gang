@@ -329,7 +329,19 @@ MonoBehaviour:
     m_ActionId: fc2df3df-adb2-4601-8dfb-09ea9c5dbda9
     m_ActionName: Player1/Movement[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -2299972044205145357}
+        m_TargetAssemblyTypeName: PlayerControllerMulti, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d830d7ac-d143-43b6-881c-041df6745a7e
     m_ActionName: Player1/Jump[/Keyboard/space]
   - m_PersistentCalls:

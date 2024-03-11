@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem; // siempre añadir esta librería cuando se trabaje con el new Input System.
 
@@ -17,6 +18,7 @@ public class PlayerControllerMulti : MonoBehaviour
     [Header("Character stats & Status")]
     public float speed;
     public float JumpForce;
+    public float restablishCooldown = 3f;
     [SerializeField] bool isFacingRight;
     [SerializeField] bool canAttack;
     [SerializeField] PlayerState currentState;
@@ -30,6 +32,13 @@ public class PlayerControllerMulti : MonoBehaviour
 
 
 
+
+    [Header("knockback Configuration")]
+    public float knockbackX;// fuerza empuje x
+    public float knockbackY;// fuerza empuje y.
+    public float knockbackMultiplier = 1;
+    Vector2 knockbackForce; //Fuerza total empuje.
+   
     private void Awake()
     {
        anim = GetComponent<Animator>();
@@ -70,7 +79,45 @@ public class PlayerControllerMulti : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        //lo haremos en la siguiente clase.
+        
+        if (context.performed && isGrounded)
+        {
+            if(currentState == PlayerState.normal) 
+            {
+                playerRb.AddForce(Vector3.up * JumpForce, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+      if(collision.gameObject.CompareTag("Attack") && currentState == PlayerState.normal) 
+        {
+            //Triggerear animaciones.
+            currentState = PlayerState.damaged;
+            //knockback según posicion que golpea.
+            //si el que pega la patada esta a la izquierda....
+            if(collision.gameObject.transform.position.x < gameObject.transform.position.x)
+            {
+                //knockback hacia el eje x positivo
+                knockbackForce = new Vector2(knockbackX, knockbackY);//Determinar la fuerza de empuje a la derecha.
+                playerRb.AddForce(knockbackForce * knockbackMultiplier); //Aplica fuerza por multiplicador si lo hay, si no lo hay debe ser 1.
+
+            }
+            else // si el que pega la patada esta  ala derecha
+            {
+                // knockback eje x negativo.
+                knockbackForce = new Vector2(-knockbackX, knockbackY);//Determinar la fuerza de empuje a la derecha.
+                playerRb.AddForce(knockbackForce * knockbackMultiplier); //Aplica fuerza por multiplicador si lo hay, si no lo hay debe ser 1.
+
+            }
+
+            Invoke(nameof(ResetStatus), restablishCooldown);
+        }
+    }
+    void ResetStatus()
+    {
+        currentState = PlayerState.normal;
     }
 
 
