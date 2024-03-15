@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e9bada2fbd2e2094eb450586ac504037
+guid: 2eeb25ae28518374b834f337da1ff35b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 45
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,85 +136,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prueba tileable a ver si conecta_0
+      name: "L\xEDmite del escenario_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 94
-        width: 45
-        height: 66
+        y: 0
+        width: 5
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 2, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b550cd3887c6ac46b3b6b78b936dcee
-      internalID: -1818914701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prueba tileable a ver si conecta_1
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 95
-        width: 44
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 593fa7c410ffec94eaddc5c204d3ed38
-      internalID: -1585273306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prueba tileable a ver si conecta_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 213
-        width: 64
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 275eadcb329742749946a17cead98aba
-      internalID: 1894306034
+      spriteID: 12dcd69699b4f304b805b73c32ce5925
+      internalID: 2022364480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba tileable a ver si conecta_3
+      name: "L\xEDmite del escenario_1"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 59
         y: 0
-        width: 64
-        height: 45
+        width: 5
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 1}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72dd8d72ec29b2949bd3fd5cbc70005c
-      internalID: -2055789149
+      spriteID: 2640d47eed1c3c947855554929e795f5
+      internalID: -265485787
       vertices: []
       indices: 
       edges: []
@@ -230,10 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      prueba tileable a ver si conecta_0: 253711899
-      prueba tileable a ver si conecta_1: -1738390336
-      prueba tileable a ver si conecta_2: -1818914701
-      prueba tileable a ver si conecta_3: -1585273306
+      "L\xEDmite del escenario_0": 2022364480
+      "L\xEDmite del escenario_1": -265485787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

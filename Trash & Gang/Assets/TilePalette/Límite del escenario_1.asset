@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: prueba tileable a ver si conecta
+  m_Name: "L\xEDmite del escenario_1"
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: e9bada2fbd2e2094eb450586ac504037, type: 3}
+  m_Sprite: {fileID: -265485787, guid: 2eeb25ae28518374b834f337da1ff35b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

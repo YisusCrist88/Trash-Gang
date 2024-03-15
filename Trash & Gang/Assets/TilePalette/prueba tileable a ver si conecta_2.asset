@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: prueba tileable a ver si conecta_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 608973865, guid: e9bada2fbd2e2094eb450586ac504037, type: 3}
+  m_Sprite: {fileID: 1894306034, guid: e9bada2fbd2e2094eb450586ac504037, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
