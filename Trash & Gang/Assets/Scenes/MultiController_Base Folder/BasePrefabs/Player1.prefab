@@ -130,9 +130,10 @@ GameObject:
   - component: {fileID: 2068837523699302295}
   - component: {fileID: -8501234456322483789}
   - component: {fileID: -2299972044205145357}
+  - component: {fileID: 6070578726489955757}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,6 +373,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6d04828f-c5c0-451a-bc71-02a4608dbda1
     m_ActionName: Player2/Attack
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2299972044205145357}
+        m_TargetAssemblyTypeName: PlayerControllerMulti, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ab10a96d-e3f8-4a2f-98fc-cbcb3076f44b
+    m_ActionName: Player1/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f884bd0-fa2e-4ef0-a73d-3e45d025ac90
+    m_ActionName: Player2/Sprint
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player1
@@ -389,8 +410,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18d4b8f1108724981a86ad0817fed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  JumpForce: 5
+  speed: 0
+  normalSpeed: 4
+  sprintSpeed: 8
+  damagedSpeed: 2
+  JumpForce: 8
+  restablishCooldown: 3
   isFacingRight: 0
   canAttack: 0
   currentState: 0
@@ -400,6 +425,21 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  knockbackX: 0
+  knockbackY: 0
+  knockbackMultiplier: 1
+--- !u!114 &6070578726489955757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060348865890082559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bc253bbbb5f2846ad850090943edd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4862564269273420420
 GameObject:
   m_ObjectHideFlags: 0

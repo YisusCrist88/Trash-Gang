@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6472119347984630611}
   - component: {fileID: 6117974095414633665}
   - component: {fileID: 3102371949170744560}
+  - component: {fileID: 1540961028251642253}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Attack
@@ -190,6 +191,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1540961028251642253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937122431785624042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bce2697025e3574d93066d38e85fc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTime: 2
 --- !u!1 &8323173904778323024
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,9 +219,10 @@ GameObject:
   - component: {fileID: 5462722255227674557}
   - component: {fileID: -7282272450322126019}
   - component: {fileID: -2634571712887032043}
+  - component: {fileID: 3586486274111335611}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,6 +462,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6d04828f-c5c0-451a-bc71-02a4608dbda1
     m_ActionName: Player2/Attack
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab10a96d-e3f8-4a2f-98fc-cbcb3076f44b
+    m_ActionName: Player1/Sprint[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2634571712887032043}
+        m_TargetAssemblyTypeName: PlayerControllerMulti, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5f884bd0-fa2e-4ef0-a73d-3e45d025ac90
+    m_ActionName: Player2/Sprint
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: GamePad
   m_DefaultActionMap: Player2
@@ -464,8 +499,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18d4b8f1108724981a86ad0817fed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  JumpForce: 5
+  speed: 0
+  normalSpeed: 4
+  sprintSpeed: 8
+  damagedSpeed: 2
+  JumpForce: 8
+  restablishCooldown: 3
   isFacingRight: 0
   canAttack: 0
   currentState: 0
@@ -475,6 +514,21 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  knockbackX: 0
+  knockbackY: 0
+  knockbackMultiplier: 1
+--- !u!114 &3586486274111335611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8323173904778323024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bc253bbbb5f2846ad850090943edd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9072560935864902376
 GameObject:
   m_ObjectHideFlags: 0

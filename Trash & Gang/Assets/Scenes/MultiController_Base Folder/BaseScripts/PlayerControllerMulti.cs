@@ -13,10 +13,16 @@ public class PlayerControllerMulti : MonoBehaviour
     Rigidbody2D playerRb; // Para aplicar fuerzas físicas (movimiento salto)
     PlayerInput playerInput; //Para leer la snuevas inputs
     Vector2 horInput; // para almacenar el Input derecha/izquierda de todos los dispositivos.
-    public enum PlayerState {normal, damaged, stunned }
+    public enum PlayerState {normal, damaged, stunned, sprinting }
+    private bool isSprinting, isDamaged;
+
 
     [Header("Character stats & Status")]
     public float speed;
+    public float normalSpeed;
+    public float sprintSpeed;
+    public float damagedSpeed;
+
     public float JumpForce;
     public float restablishCooldown = 3f;
     [SerializeField] bool isFacingRight;
@@ -72,7 +78,12 @@ public class PlayerControllerMulti : MonoBehaviour
 
     void Movement ()
     {
+        //calculo de la velocidad según el estado del personaje
+        //Uso del operador ternario (?)
+        speed = isDamaged ? damagedSpeed : (isSprinting ? sprintSpeed : normalSpeed);  
+        //Ejecución del movimiento en sí
         playerRb.velocity = new Vector2(horInput.x * speed, playerRb.velocity.y);
+
 
     }
 
@@ -95,6 +106,8 @@ public class PlayerControllerMulti : MonoBehaviour
         {
             //Triggerear animaciones.
             currentState = PlayerState.damaged;
+            isDamaged = true;
+           
             //knockback según posicion que golpea.
             //si el que pega la patada esta a la izquierda....
             if(collision.gameObject.transform.position.x < gameObject.transform.position.x)
@@ -118,6 +131,7 @@ public class PlayerControllerMulti : MonoBehaviour
     void ResetStatus()
     {
         currentState = PlayerState.normal;
+        isDamaged = false;
     }
 
 
@@ -164,5 +178,15 @@ public class PlayerControllerMulti : MonoBehaviour
     void ResetAttack()
     {
         canAttack = true;
+    }
+
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        isSprinting = context.ReadValueAsButton(); 
+        //ReadValueAsButton() "Imita el mantener pulsado un botón del antiguo input system"
+        //Se suele asociar a bools. Es decir cuando mantenemos el botón se activa (true) un estado.
+        //En otra parte del código pondremos un condicional que define que en estado X pasa cosa X.
+
     }
 }
