@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attack
   - Ground
+  - StageLimit
   layers:
   - Default
   - TransparentFX
